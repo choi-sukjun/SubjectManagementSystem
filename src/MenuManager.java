@@ -8,5 +8,4 @@ public class MenuManager {
 		 System.out.println(" 5. Exit");
 		 System.out.println("Select one number between 1 - 5");
 	}
-
 }
