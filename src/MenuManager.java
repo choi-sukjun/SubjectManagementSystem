@@ -17,15 +17,20 @@ public class MenuManager {
 			 num = input.nextInt();
 			 if (num == 1) {
 				 addSubject();
-			 if (num == 2) {
+			 }
+			 else if (num == 2) {
 					 deleteSubject();
-			 if (num == 3) {
+			 }
+			 else if (num == 3) {
 					 editSubject();
-			 if (num == 4) {
+			 }
+			 else if (num == 4) {
 					 viewSubject();
 			 }
-		 }
+		}
 	}
+
+
 	public static void addSubject() {
 		 Scanner input = new Scanner(System.in);
 		 System.out.print("Subject ID: ");
