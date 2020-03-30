@@ -36,19 +36,19 @@ public class MenuManager {
 		 System.out.print("Subject ID: ");
 		 int subjectID = input.nextInt();
 		 System.out.println(subjectID);
-		 System.out.print("Subject name:");
+		 System.out.print("Subject name: ");
 		 String subjectname = input.next();
 		 System.out.println(subjectname);
 		 System.out.println("Subject time");
 		 System.out.print("Day:");
 		 String day = input.next();		
-		 System.out.print("Start Time:");
+		 System.out.print("Start Time: ");
 		 int starttime = input.nextInt();
-		 System.out.print("Finish Time:");
+		 System.out.print("Finish Time: ");
 		 int finishtime = input.nextInt();
 		 System.out.print(day + ", ");
 		 System.out.println(starttime + " to " + finishtime); 
-		 System.out.print("Professor's name");
+		 System.out.print("Professor's name: ");
 		 String professorname = input.next();
 		 System.out.println(professorname);
 	}
