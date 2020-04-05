@@ -27,6 +27,9 @@ public class MenuManager {
 			 else if (num == 4) {
 				 subjectManager.viewSubject();
 			 }
+			 else {
+				 continue;
+			 }
 		}
 	}
 
