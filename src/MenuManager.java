@@ -32,47 +32,4 @@ public class MenuManager {
 			 }
 		}
 	}
-
-
-	public static void addSubject() {
-		 Scanner input = new Scanner(System.in);
-		 System.out.print("Subject ID: ");
-		 int subjectID = input.nextInt();
-		 System.out.println(subjectID);
-		 System.out.print("Subject name: ");
-		 String subjectname = input.next();
-		 System.out.println(subjectname);
-		 System.out.println("Subject time");
-		 System.out.print("Day:");
-		 String day = input.next();		
-		 System.out.print("Start Time: ");
-		 int starttime = input.nextInt();
-		 System.out.print("Finish Time: ");
-		 int finishtime = input.nextInt();
-		 System.out.print(day + ", ");
-		 System.out.println(starttime + " to " + finishtime); 
-		 System.out.print("Professor's name: ");
-		 String professorname = input.next();
-		 System.out.println(professorname);
-	}
-	
-	public static void deleteSubject() {
-		 Scanner input = new Scanner(System.in);
-		 System.out.print("Subject ID: ");
-		 int subjectID = input.nextInt();
-	}
-	
-	public static void editSubject() {
-		 Scanner input = new Scanner(System.in);
-		 System.out.print("Subject ID: ");
-		 int subjectID = input.nextInt();
-	}
-	
-	public static void viewSubject() {
-		 Scanner input = new Scanner(System.in);
-		 System.out.print("Subject ID: ");
-		 int subjectID = input.nextInt();
-	}
 }
-
-	
