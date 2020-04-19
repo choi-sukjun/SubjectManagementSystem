@@ -117,8 +117,7 @@ public class SubjectManager {
 	}
 	
 	public void viewSubjects() {
-//		 System.out.print("Subject ID: ");
-//		 int subjectId = input.nextInt();
+
 		 System.out.println("# of resgistered subjects:" + subjects.size());
 		 for (int i = 0; i<subjects.size(); i++) {
 			 subjects.get(i).printInfo();
