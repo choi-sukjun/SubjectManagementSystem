@@ -2,6 +2,8 @@ package subject;
 
 import java.util.Scanner;
 
+import exception.DayFormatException;
+
 public abstract class Subject implements SubjectInput {
 	protected SubjectKind Kind = SubjectKind.Liberalarts;
 	protected String name;
@@ -63,7 +65,10 @@ public abstract class Subject implements SubjectInput {
 		return day;
 	}
 
-	public void setDay(String day) {
+	public void setDay(String day)  throws DayFormatException {
+		if (!day.contains("day")) {
+			throw new DayFormatException();
+			}
 		this.day = day;
 	}
 
@@ -123,10 +128,17 @@ public abstract class Subject implements SubjectInput {
 	}
 	
 	public void setSubjectTime(Scanner input) {
-		System.out.println("Subject time");
-		System.out.print("Day:");
-		String day = input.next();	
-		this.setDay(day);
+		String day = "";
+		while (!day.contains("day")) {		
+			System.out.println("Subject time");
+			System.out.print("Day:");
+			day = input.next();	
+			try {
+				this.setDay(day);
+			} catch (DayFormatException e) {
+				System.out.println("Incorrect Day Format. Express through the days of the week");			
+			}
+		}
 		System.out.print("Start Time: ");
 		int starttime = input.nextInt();
 		this.setStarttime(starttime);

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import subject.LiberalartsSubject;
 import subject.MajorSubject;
@@ -12,31 +13,42 @@ public class SubjectManager {
 		this.input = input;
 	}	
 	public void addSubject() {
+		
 		int kind = 0; 
 		Subject subject;
-		while (kind != 1 && kind != 2) {			
-			System.out.println("1 for Liberal Arts Subject: ");
-			System.out.println("2 for Major Subject: ");
-			System.out.print("Select num for Subject Kind between 1 and 2: ");
-			kind = input.nextInt();
+		while (kind != 1 && kind != 2) {	
+			try {
+				System.out.println("go into add subjects in while");
+				System.out.println("1 for Liberal Arts Subject: ");
+				System.out.println("2 for Major Subject: ");
+				System.out.print("Select num for Subject Kind between 1 or 2 for Sunject Kind: ");
+				kind = input.nextInt();
 			
-			if (kind == 1) {
-				subject = new LiberalartsSubject(SubjectKind.Liberalarts);
-				subject.getUserInput(input);
-				subjects.add(subject);
-				break;  
+				if (kind == 1) {
+					subject = new LiberalartsSubject(SubjectKind.Liberalarts);
+					subject.getUserInput(input);
+					subjects.add(subject);
+					break;  
+				}
+				else if (kind == 2) {
+					subject = new MajorSubject(SubjectKind.Major);
+					subject.getUserInput(input);
+					subjects.add(subject);
+					break;
+					}					
+				else {
+					System.out.print("Select num for Subject Kind: ");
+				}
 			}
-			else if (kind == 2) {
-				subject = new MajorSubject(SubjectKind.Major);
-				subject.getUserInput(input);
-				subjects.add(subject);
-				break;
-			}					
-			else {
-				System.out.print("Select num for Subject Kind: ");
+			catch(InputMismatchException e) {
+				 System.out.println("Please put integer between 1 or 2!");
+				 if (input.hasNext()) {
+					 input.next();
+				 }
+				 kind = -1;
 			}
-		 }
-	}
+		}
+	}	
 	
 	public void deleteSubject() {
 		 System.out.print("Subject ID: ");
