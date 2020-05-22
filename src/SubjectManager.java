@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -6,12 +7,22 @@ import subject.MajorSubject;
 import subject.Subject;
 import subject.SubjectKind;
 
-public class SubjectManager {
+public class SubjectManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2775342094203559872L;
+	
 	ArrayList<Subject> subjects = new ArrayList<Subject>();
-	Scanner input;
+	transient Scanner input;
 	SubjectManager(Scanner input) {
 		this.input = input;
 	}	
+	
+	public void setScanner(Scanner input) {
+	     this.input = input;
+	}
+	
 	public void addSubject() {
 		
 		int kind = 0; 

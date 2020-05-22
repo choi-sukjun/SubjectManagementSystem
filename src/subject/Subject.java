@@ -1,10 +1,15 @@
 package subject;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.DayFormatException;
 
-public abstract class Subject implements SubjectInput {
+public abstract class Subject implements SubjectInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -187375947116105818L;
 	protected SubjectKind Kind = SubjectKind.Liberalarts;
 	protected String name;
 	protected String id;
