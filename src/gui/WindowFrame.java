@@ -2,22 +2,27 @@ package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import manager.SubjectManager;
 
 public class WindowFrame extends JFrame{
-	MenuSelection menuselection;
+	
+	MenuSelection menuSelection;
+	SubjectManager subjectManager;
 	SubjectAdder subjectadder;
 	SubjectViewer subjectviewer;
 	
-	public WindowFrame() {	
-		this.menuselection = new MenuSelection(this);
-		this.subjectadder = new SubjectAdder(this);
-		this.subjectviewer = new SubjectViewer(this);
-		
+	public WindowFrame(SubjectManager subjectManager) {	
 		this.setSize(500, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
-		this.setupPanel(menuselection);
+		this.setTitle("My Frame");
 		
+		this.subjectManager = subjectManager;
+		menuSelection = new MenuSelection(this);
+		subjectadder = new SubjectAdder(this);
+		subjectviewer = new SubjectViewer(this, this.subjectManager);
+
+		this.add(menuSelection);
+		 
 		this.setVisible(true);
 	}
 	
@@ -29,11 +34,11 @@ public class WindowFrame extends JFrame{
 	}
 	
 	public MenuSelection getMenuselection() {
-		return menuselection;
+		return menuSelection;
 	}
 
 	public void setMenuselection(MenuSelection menuselection) {
-		this.menuselection = menuselection;
+		this.menuSelection = menuselection;
 	}
 
 	public SubjectAdder getSubjectadder() {

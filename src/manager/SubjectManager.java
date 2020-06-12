@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -130,6 +131,14 @@ public class SubjectManager implements Serializable{
 			 subjects.get(i).printInfo();
 		 }
 	}	 
+	
+	public int size() {
+		return subjects.size();
+	}
+	
+	public Subject get(int index) {
+		return (Subject)subjects.get(index); 
+	}
 	
 	public void showEditMenu() {
 		 System.out.println("*** Subject Info Edit Menu ***");

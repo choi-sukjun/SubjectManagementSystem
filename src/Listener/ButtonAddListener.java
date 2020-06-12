@@ -17,7 +17,6 @@ public class ButtonAddListener implements ActionListener {
 		this.frame = frame;
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton) e.getSource();
 		SubjectAdder adder = frame.getSubjectadder();
